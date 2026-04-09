@@ -1,0 +1,18 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+    "readings": {
+      ".write": true,
+      ".read": "auth != null"
+    },
+    "rooms": {
+      ".write": true,
+      ".read": "auth != null"
+    },
+    "config": {
+      ".read": true,
+      ".write": "auth != null" 
+    }
+  }
+}

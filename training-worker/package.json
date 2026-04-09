@@ -1,0 +1,13 @@
+{
+  "name": "co2-training-worker",
+  "version": "1.0.0",
+  "description": "Background training worker — learns from live sensor readings even when dashboard is closed",
+  "type": "module",
+  "scripts": {
+    "start": "node worker.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "@tensorflow/tfjs": "^4.22.0"
+  }
+}
