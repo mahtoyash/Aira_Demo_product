@@ -54,7 +54,7 @@ export default function Hero() {
           className="w-full h-full object-cover object-center"
         >
           <source
-            src={import.meta.env.BASE_URL + "background.mp4"}
+            src={import.meta.env.BASE_URL + "hero_compressed.mp4"}
             type="video/mp4"
           />
         </video>
