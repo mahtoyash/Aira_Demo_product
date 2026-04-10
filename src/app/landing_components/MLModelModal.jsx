@@ -36,7 +36,7 @@ export default function MLModelModal({ isOpen, onClose }) {
 
             <div className="w-full flex-1 flex items-center justify-center rounded-2xl overflow-hidden bg-zinc-50">
               <img 
-                src="./ml-model.jpeg" 
+                src={`${import.meta.env.BASE_URL}ml-model.jpeg`}
                 alt="Machine Learning Model" 
                 className="w-full h-full object-contain"
               />

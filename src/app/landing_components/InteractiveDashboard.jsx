@@ -488,14 +488,14 @@ export default function InteractiveDashboard() {
                 <div className="flex flex-col md:flex-row gap-6 w-full justify-center items-center">
                   <div className="relative rounded-2xl overflow-hidden shadow-lg border border-white/10 group flex-1">
                     <img 
-                      src="./stack-image-1.jpeg" 
+                      src={`${import.meta.env.BASE_URL}stack-image-1.jpeg`}
                       alt="Overview 1" 
                       className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="relative rounded-2xl overflow-hidden shadow-lg border border-white/10 group flex-1">
                     <img 
-                      src="./stack-image-2.jpeg" 
+                      src={`${import.meta.env.BASE_URL}stack-image-2.jpeg`}
                       alt="Overview 2" 
                       className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />

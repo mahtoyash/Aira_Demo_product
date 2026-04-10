@@ -4,32 +4,32 @@ import { Settings, Cpu, HardDrive, Wifi, Shield } from 'lucide-react';
 
 const specsItems = [
   {
-    image: "./specs-image-1.jpeg",
+    image: import.meta.env.BASE_URL + "specs-image-1.jpeg",
     name: "Aether Sensor Array",
     role: "Core Environmental Scanner",
   },
   {
-    image: "./specs-image-2.jpeg",
+    image: import.meta.env.BASE_URL + "specs-image-2.jpeg",
     name: "Air Flow Module",
     role: "Precision VOC detection",
   },
   {
-    image: "./specs-image-3.jpeg",
+    image: import.meta.env.BASE_URL + "specs-image-3.jpeg",
     name: "Smart Hub Controller",
     role: "Central Processing Unit",
   },
   {
-    image: "./specs-image-1.jpeg",
+    image: import.meta.env.BASE_URL + "specs-image-1.jpeg",
     name: "Aether Sensor Array",
     role: "Core Environmental Scanner (Node 2)",
   },
   {
-    image: "./specs-image-2.jpeg",
+    image: import.meta.env.BASE_URL + "specs-image-2.jpeg",
     name: "Air Flow Module",
     role: "Precision VOC detection (Node 2)",
   },
   {
-    image: "./specs-image-3.jpeg",
+    image: import.meta.env.BASE_URL + "specs-image-3.jpeg",
     name: "Smart Hub Controller",
     role: "Central Processing Unit (Node 2)",
   },

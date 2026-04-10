@@ -8,9 +8,9 @@ const Z_SPREAD = 42;
 const SIGMA = 2.8;
 
 const PANEL_IMAGES = [
-  "/dashboard1.png",
-  "/dashboard2.png",
-  "/dashboard3.png"
+  import.meta.env.BASE_URL + "dashboard1.png",
+  import.meta.env.BASE_URL + "dashboard2.png",
+  import.meta.env.BASE_URL + "dashboard3.png"
 ];
 
 const GRADIENT_OVERLAYS = [
