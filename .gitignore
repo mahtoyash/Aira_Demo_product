@@ -15,7 +15,6 @@ dist-ssr
 # Build Logs
 build_log.txt
 github_privacy_guide.txt
-*.mp4
 
 # Editor directories and files
 .vscode/*
