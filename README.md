@@ -38,3 +38,7 @@ Once the Web Worker finishes a successful epoch of online training, it transmits
 
 ## 🚀 Deployment Operations
 Currently bundled accurately with `vite build` pushing `dist` assets efficiently up to the `gh-pages` GitHub branch tracking environment variables via Vite's natively exposed `import.meta.env.BASE_URL`.
+
+
+Future Development: 
+1. additional of Google Fir so , Users can get notifications related to their own Health problems
