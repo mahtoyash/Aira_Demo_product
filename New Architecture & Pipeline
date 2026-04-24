@@ -1,0 +1,63 @@
+🏗️ System Architecture & Pipeline
+Project Overview
+This project is a Serverless IoT Room Analytics System designed for high-speed, low-latency monitoring. It integrates real-time AI-driven people counting via 5GHz Wi-Fi 6 and environmental sensing (CO2) via a modular Bluetooth sub-node.
+
+📐 System Architecture
+The system is divided into three main layers:
+
+1. Sensor Edge Node (Peripheral)
+MCU: ESP32 (Standard)
+
+Sensor: SCD41 (Photoacoustic CO2 Sensor)
+
+Function: Samples CO2, Temperature, and Humidity at 1-minute intervals.
+
+Communication: Transmits data packets to the Main Gateway via Bluetooth Low Energy (BLE) to maintain physical modularity and reduce interference.
+
+2. AI Gateway Node (Central)
+MCU: ESP32-C5 (Dual-band Wi-Fi 6 + RISC-V)
+
+Camera: OV2640 (2MP) connected via PARLIO (Parallel IO) interface.
+
+Connectivity: Utilizes the 5GHz band to bypass 2.4GHz congestion, ensuring a stable 15 FPS stream.
+
+Role: Acts as the primary gateway. It receives BLE data from the Sensor Node and captures raw JPEG frames from the camera.
+
+3. Cloud Processing & Logic Layer
+Backend: FastAPI hosted on Hugging Face Spaces (Serverless).
+
+AI Model: YOLOv8-tiny optimized for real-time human detection.
+
+Database: Firebase Realtime Database.
+
+Pipeline: 1.  Gateway POSTs raw JPEG buffers to the Cloud API.
+2.  The API performs In-Memory Inference (Process-and-Delete) to detect people.
+3.  A "Tripwire" logic counts entries/exits at the door region.
+4.  Processed counts and CO2 telemetry are synced to Firebase.
+
+🚀 Data Pipeline Flow
+Capture: The ESP32-C5 captures JPEG frames at ~15 FPS with a resolution of 320x240 (QVGA) to balance detail and latency.
+
+Transmission: Frames are transmitted over 5GHz Wi-Fi using a multipart/form-data POST request.
+
+Inference: The Cloud-hosted Python script receives the image, converts it to an OpenCV object, and runs YOLOv8 detection.
+
+Telemetry Merge: Every 60 seconds, the C5 injects the latest SCD41 sensor data (received via Bluetooth) into the metadata stream.
+
+State Management: The final "Room Occupancy" and "Air Quality" states are pushed to Firebase, maintaining a total latency of <2 seconds.
+
+🔋 Power Management
+Battery: 5000mAh - 10000mAh LiPo (Lithium Polymer) flat pack.
+
+Regulation: MT3608 DC-DC Boost Converter (Stable 5V output) and TP4056 for Type-C charging.
+
+Efficiency: The system utilizes the 5GHz Wi-Fi 6 "Target Wake Time" (TWT) features of the ESP32-C5 (where applicable) to optimize power consumption during high-bandwidth streaming.
+
+🛠️ Hardware Requirements
+Main Controller: ESP32-C5 DevKit
+
+Camera: OV2640 Module
+
+Environment Sensor: SCD41
+
+Power: 5000mAh LiPo Battery + TP4056 Charger
