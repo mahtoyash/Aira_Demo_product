@@ -22,8 +22,9 @@ export function Sidebar({ isOpen, setIsOpen, onOpenNotifications, onOpenProfile,
       <>
         {/* Hamburger button — z-30 so it doesn't fight with page z-50 dropdowns */}
         <button
+          aria-label="Open menu"
           onClick={() => setIsOpen(true)}
-          className="fixed top-4 left-4 z-[35] p-2.5 rounded-xl text-[var(--dash-text-secondary)] hover:text-[var(--dash-text)] transition-colors shadow-lg md:hidden"
+          className="fixed top-4 left-4 z-[35] p-2.5 rounded-xl text-[var(--dash-text-secondary)] hover:text-[var(--dash-text)] transition-colors shadow-lg md:hidden focus-visible:ring-2 focus-visible:outline-none"
           style={{
             background: 'rgba(20,20,22,0.7)',
             backdropFilter: 'blur(16px)',
@@ -67,7 +68,7 @@ export function Sidebar({ isOpen, setIsOpen, onOpenNotifications, onOpenProfile,
                         <span className="text-[var(--dash-text-secondary)] font-medium text-sm">{t('hey')}</span><br/>{userName}
                       </h1>
                     </div>
-                    <button onClick={() => setIsOpen(false)} className="p-2 text-[var(--dash-text-muted)] hover:text-[var(--dash-text)] rounded-xl transition-colors">
+                    <button aria-label="Close menu" onClick={() => setIsOpen(false)} className="p-2 text-[var(--dash-text-muted)] hover:text-[var(--dash-text)] rounded-xl transition-colors focus-visible:ring-2 focus-visible:outline-none">
                       <X className="w-5 h-5" />
                     </button>
                   </div>
@@ -119,8 +120,9 @@ export function Sidebar({ isOpen, setIsOpen, onOpenNotifications, onOpenProfile,
             )}
           </AnimatePresence>
           <button 
+            aria-label="Toggle menu"
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-[var(--dash-text-muted)] hover:text-[var(--dash-text)] hover:bg-white/[0.04] rounded-xl transition-colors flex-shrink-0"
+            className="p-2 text-[var(--dash-text-muted)] hover:text-[var(--dash-text)] hover:bg-white/[0.04] rounded-xl transition-colors flex-shrink-0 focus-visible:ring-2 focus-visible:outline-none"
           >
             <Menu className="w-5 h-5" />
           </button>

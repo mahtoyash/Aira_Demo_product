@@ -276,14 +276,16 @@ export function StatCard({
           
           <div className="flex items-center gap-3">
             <button
+              aria-label="Decrement value"
               onClick={onDecrement}
-              className="w-10 h-10 rounded-lg bg-white/[0.04] hover:bg-[var(--dash-red)]/10 border border-white/[0.04] hover:border-[var(--dash-red)]/30 flex items-center justify-center transition-all hover:shadow-[0_0_12px_rgba(255,55,95,0.15)] active:scale-95 group/btn"
+              className="w-10 h-10 rounded-lg bg-white/[0.04] hover:bg-[var(--dash-red)]/10 border border-white/[0.04] hover:border-[var(--dash-red)]/30 flex items-center justify-center transition-all hover:shadow-[0_0_12px_rgba(255,55,95,0.15)] active:scale-95 group/btn focus-visible:ring-2 focus-visible:outline-none"
             >
               <Minus className="w-4 h-4 text-[var(--dash-text-muted)] group-hover/btn:text-[var(--dash-red)] transition-colors" />
             </button>
             <button
+              aria-label="Increment value"
               onClick={onIncrement}
-              className="w-10 h-10 rounded-lg bg-white/[0.04] hover:bg-[var(--dash-green)]/10 border border-white/[0.04] hover:border-[var(--dash-green)]/30 flex items-center justify-center transition-all hover:shadow-[0_0_12px_rgba(52,211,153,0.15)] active:scale-95 group/btn"
+              className="w-10 h-10 rounded-lg bg-white/[0.04] hover:bg-[var(--dash-green)]/10 border border-white/[0.04] hover:border-[var(--dash-green)]/30 flex items-center justify-center transition-all hover:shadow-[0_0_12px_rgba(52,211,153,0.15)] active:scale-95 group/btn focus-visible:ring-2 focus-visible:outline-none"
             >
               <Plus className="w-4 h-4 text-[var(--dash-text-muted)] group-hover/btn:text-[var(--dash-green)] transition-colors" />
             </button>
