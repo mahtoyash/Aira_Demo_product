@@ -71,7 +71,7 @@ export function ProfileModal({ isOpen, onClose, userName, setUserName, profilePh
                 <User className="text-[var(--dash-text-muted)] w-5 h-5" />
                 {t('my_profile')}
               </h2>
-              <button onClick={onClose} className="text-[var(--dash-text-muted)] hover:text-[var(--dash-text)] transition-colors bg-white/5 hover:bg-white/10 p-2 rounded-xl border border-white/5">
+              <button aria-label="Close profile" onClick={onClose} className="text-[var(--dash-text-muted)] hover:text-[var(--dash-text)] transition-colors bg-white/5 hover:bg-white/10 p-2 rounded-xl border border-white/5 focus-visible:ring-2 focus-visible:outline-none">
                 <X className="w-5 h-5" />
               </button>
             </div>
