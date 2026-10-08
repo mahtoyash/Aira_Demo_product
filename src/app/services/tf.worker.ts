@@ -47,7 +47,12 @@ async function buildModel() {
 // ── Base weights fallback ──
 async function loadBaseWeights() {
   try {
-    const resp = await fetch('/model/base_weights.json');
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const targetUrl = `${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}model/base_weights.json`;
+    let resp = await fetch(targetUrl);
+    if (!resp.ok) {
+      resp = await fetch('/model/base_weights.json');
+    }
     if (!resp.ok) return null;
     const raw: any[] = await resp.json();
     const shapes: number[][] = (model.weights as any[]).map((w: any) => w.shape);
